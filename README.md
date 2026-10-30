@@ -1,7 +1,7 @@
 <div align="center">
   <table>
     <tr>
-      <td><img src="ascii.webp" width="384" alt="" /></td>
+      <td><img src="a.png" width="384" alt="" /></td>
       <td>
         <a href="https://commit-history.com/Daenqs">
           <picture>
