@@ -1,11 +1,8 @@
 name: Metrics
 
 on:
-  # Her gün otomatik güncelle (UTC 00:00)
   schedule: [{cron: "0 0 * * *"}]
-  # Actions sekmesinden manuel çalıştırma
   workflow_dispatch:
-  # Push yapınca da çalışsın
   push: {branches: ["master", "main"]}
 
 jobs:
@@ -24,8 +21,8 @@ jobs:
           filename: metrics.svg
           config_timezone: Europe/Istanbul
           config_display: large
-          
-          # "These metrics include private contributions..." footer yazısını tamamen gizle
+
+          # Footer yazısını gizle
           config_output: svg
           extras_css: |
             .footer, footer, [id*="notice"], [class*="notice"] {
@@ -51,20 +48,7 @@ jobs:
           # Eklenen/silinen satır sayıları
           # ═══════════════════════════════════════
           plugin_lines: yes
-
-          # ═══════════════════════════════════════
-          # Kod alışkanlıkları (saat dağılımı vs.)
-          # ═══════════════════════════════════════
-          plugin_habits: yes
-          plugin_habits_from: 200
-          plugin_habits_days: 14
-          plugin_habits_charts: yes
-
-          # ═══════════════════════════════════════
-          # Commit streak bilgileri
-          # ═══════════════════════════════════════
-          plugin_achievements: yes
-          plugin_achievements_display: compact
+          plugin_lines_sections: base
 
           # ═══════════════════════════════════════
           # Öne çıkan katkılar
